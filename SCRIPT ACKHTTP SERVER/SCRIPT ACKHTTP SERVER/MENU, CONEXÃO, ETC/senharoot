@@ -9,7 +9,7 @@ read  -p : pass
 sleep 1s
 
 echo ""
-echo -e "\033[1;36mSENHA ATUALIZADA !\033[0m"
+echo -e "\033[1;32mSENHA ATUALIZADA !\033[0m"
 sleep 5s
 cd
 clear
