@@ -200,11 +200,12 @@ stsu=$(ps x | grep "udpvpn"|grep -v grep > /dev/null && echo -e "\033[1;32m(ON �
 stson=$(ps x | grep "onlineapp"|grep -v grep > /dev/null && echo -e "\033[1;32m(ON ◉) " || echo -e "\033[1;31m(OFF ○) ")
 stsbot=$(ps x | grep "bot_plus"|grep -v grep > /dev/null && echo -e "\033[1;32m(ON ◉)" || echo -e "\033[1;31m(OFF ○)")
 autm=$(grep "menu;" /etc/profile > /dev/null && echo -e "\033[1;32m(ON ◉) " || echo -e "\033[1;31m(OFF ○)")
+_swap1=$(free -h | grep -i swap | awk {'print $2'})
 [[ -e /etc/Plus-torrent ]] && stsf=$(echo -e "\033[1;32m(ON ◉)") || stsf=$(echo -e "\033[1;31m(OFF ○)")
 clear
 echo -e "\033[1;37m $system                          $date"
 echo -e "\033[01;34m===================================================================="
-echo -e "\033[1;36mMEMORIA RAM \033[1;37m ($ram4)  | \033[1;36mMEMORIA SWAP \033[1;37m ($swap4) \033[1;37m | \033[1;36mUNIDADE CPU\033[1;37m  ($_usop)"
+echo -e "\033[1;36mMEMORIA RAM \033[1;37m ($ram4) | \033[1;36mMEMORIA SWAP \033[1;37m ($swap4) \033[1;37m | \033[1;36mHARDWARE CPU\033[1;37m  ($_usop)"
 echo -e "\033[01;34m===================================================================="
 echo -e "\033[1;36mBAD-UDP/VPN \033[1;37m $stsu \033[1;37m | \033[1;36mBOT TELEGRAM $stsbot \033[1;37m | \033[1;37m\033[1;36mLIMITADOR SSH \033[1;37m $stsl"
 echo -e "\033[01;34m===================================================================="
@@ -224,9 +225,9 @@ echo -e "\033[1;34m[\033[1;37m22 •\033[1;34m]\033[1;37m > \033[1;33mSLURM \033
 echo -e "\033[1;34m[\033[1;37m23 •\033[1;34m]\033[1;37m > \033[1;33mHTOP \033[1;37m( ESTATICA DO SISTEMA /CPU/MEM/SWAP/. )\033[0;32m"
 echo -e "\033[1;34m[\033[1;37m24 •\033[1;34m]\033[1;37m > \033[1;33mGLANCES \033[1;31m\033[1;37m( ESTATICA COMPLETA DO SISTEMA. )\033[0;32m"
 echo -e "\033[01;34m===================================================================="
-echo -e "\033[1;34m[\033[1;37m25 •\033[1;34m]\033[1;37m > \033[1;33mMEMORIA VIRTUAL \033[1;37m( CRIE MEMORIA SWAP NO SERVIDOR. )\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m25 •\033[1;34m]\033[1;37m > \033[1;33mMEMORIA VIRTUAL \033[1;37m( CRIAR MEMORIA SWAP NO SERVIDOR. ) \033[1;32mINSTALADO \033[1;37m$swap1\033[0;32m"
 echo -e "\033[1;34m[\033[1;37m26 •\033[1;34m]\033[1;37m > \033[1;33mSENHA ROOT \033[1;37m( ALTERAR SENHA DE ACESSO ROOT. ) \033[0;32m"
-echo -e "\033[1;34m[\033[1;37m27 •\033[1;34m]\033[1;37m > \033[1;33mREINICIAR \033[1;37m( REINICIAR SERVIDOR. )\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m27 •\033[1;34m]\033[1;37m > \033[1;33mREINICIAR \033[1;37m( REINICIAR SERVIDOR. ) \033[1;32mSERVIDOR ATIVO \033[1;37m$(uptime | awk -F, '{sub(".*up ",x,$1);print $1}')"
 echo -e "\033[1;34m[\033[1;37m28 •\033[1;34m]\033[1;37m > \033[1;33mDETALHES \033[1;37m( EXIBIR INFORMACOES DO SERVIDOR. )\033[0;32m"
 echo -e "\033[1;34m[\033[1;37m29 •\033[1;34m]\033[1;37m > \033[1;33mEXCLUIR SCRIPT \033[1;37m( REMOVER SCRIPT DO SERVIDOR. )\033[0;32m"
 echo -e "\033[01;34m===================================================================="
@@ -351,12 +352,10 @@ _ons=$(ps -x | grep sshd | grep -v root | grep priv | wc -l)
 ram1=$(free -h | grep -i mem | awk {'print $2'})
 ram2=$(free -h | grep -i mem | awk {'print $4'})
 ram3=$(free -h | grep -i mem | awk {'print $3'})
-#ram4=$(free -m | awk 'NR==2{printf "%.2f%%\t\t", $3*100/$2 }')
 ram4=$(free | awk '/Mem/{printf("%.1f%"), $3/($2+.000000001)*100}';)
 swap1=$(free -h | grep -i swap | awk {'print $2'})
 swap2=$(free -h |grep -i swap |awk {'print $4'})
 swap3=$(free -h | grep -i swap | awk {'print $3'})
-#swap4=$(free -t | awk 'NR == 3 {printf("%.2f%"), $3/$2*100}')
 swap4=$(free | awk '/Swap/{printf("%.1f%"), $3/($2+.000000001)*100}';)
 modelo=$(cat /proc/cpuinfo |grep "model name" |uniq |awk -F : {'print $2'})
 Kernel1=$(uname -s)
@@ -379,15 +378,15 @@ system=$(cat /etc/issue.net)
 clear
 echo -e "\033[1;37m $system                          $date"
 echo -e "\033[01;34m===================================================================="
-echo -e "\033[1;36mMEMORIA RAM \033[1;37m ($ram4)  | \033[1;36mMEMORIA SWAP \033[1;37m ($swap4) \033[1;37m | \033[1;36mUNIDADE CPU\033[1;37m  ($_usop)"
+echo -e "\033[1;36mMEMORIA RAM \033[1;37m ($ram4) | \033[1;36mMEMORIA SWAP \033[1;37m ($swap4) \033[1;37m | \033[1;36mHARDWARE CPU\033[1;37m  ($_usop)"
 echo -e "\033[01;34m===================================================================="
-echo -e "\033[1;36mBAD-UDP/VPN \033[1;37m $stsu \033[1;37m | \033[1;36mBOT TELEGRAM $stsbot \033[1;37m | \033[1;37m\033[1;36mLIMITADOR SSH \033[1;37m $stsl"
+echo -e "\033[1;36mBAD-UDP/VPN \033[1;37m $stsu \033[1;37m| \033[1;36mBOT TELEGRAM $stsbot \033[1;37m| \033[1;37m\033[1;36mLIMITADOR SSH \033[1;37m $stsl"
 echo -e "\033[01;34m===================================================================="
 echo -e "\033[1;32m \033[1;32m--------------   \033[1;37mACKHTTP SERVER MANAGER V.1.1.A   \033[1;32m--------------\033[1;32m"
 echo -e "\033[01;34m===================================================================="
 echo -e "\033[1;34m[\033[1;37m01 •\033[1;34m]\033[1;37m > \033[1;33mCRIAR USUARIO \033[1;37m( CRIAR USUARIOS FIXO. )\033[0;32m"
 echo -e "\033[1;34m[\033[1;37m02 •\033[1;34m]\033[1;37m > \033[1;33mCRIAR TESTE \033[1;37m( CRIAR USUARIOS TEMPORARIO. )\033[0;32m"
-echo -e "\033[1;34m[\033[1;37m03 •\033[1;34m]\033[1;37m > \033[1;33mRELATORIO \033[1;37m( INFORMACOES DE USUARIOS CRIADOS. ) \033[1;36mTOTAL >>> \033[1;37m$_tuser \033[0;32m"
+echo -e "\033[1;34m[\033[1;37m03 •\033[1;34m]\033[1;37m > \033[1;33mRELATORIO \033[1;37m( INFORMACOES DE USUARIOS CRIADOS. ) \033[1;36mCRIADOS \033[1;37m$_tuser \033[0;32m"
 echo -e "\033[01;34m===================================================================="
 echo -e "\033[1;34m[\033[1;37m04 •\033[1;34m]\033[1;37m > \033[1;33mALTERAR SENHA \033[1;37m( ALTERAR SENHA DOS USUARIOS. )\033[0;32m"
 echo -e "\033[1;34m[\033[1;37m05 •\033[1;34m]\033[1;37m > \033[1;33mALTERAR DATA \033[1;37m( ALTERAR DATA DE VENCIMENTO DOS USUARIOS. )\033[0;32m"
@@ -398,7 +397,7 @@ echo -e "\033[1;34m[\033[1;37m08 •\033[1;34m]\033[1;37m > \033[1;33mREMOVER EX
 echo -e "\033[01;34m===================================================================="
 echo -e "\033[1;34m[\033[1;37m09 •\033[1;34m]\033[1;37m > \033[1;33mBANNER SSH \033[1;37m( TEXTO AO CONECTAR VIA SSH. )\033[0;32m"
 echo -e "\033[1;34m[\033[1;37m10 •\033[1;34m]\033[1;37m > \033[1;33mBACKUP SSH \033[1;37m( BACKUP DE USUARIOS. )\033[0;32m"
-echo -e "\033[1;34m[\033[1;37m11 •\033[1;34m]\033[1;37m > \033[1;33mMONITOR SSH \033[1;37m( MONITORAR CONEXOES ATIVAS.) \033[1;32mCONECTADOS >>> \033[1;37m$_onlin\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m11 •\033[1;34m]\033[1;37m > \033[1;33mMONITOR SSH \033[1;37m( MONITORAR CONEXOES ATIVAS.) \033[1;32mCONECTADOS \033[1;37m$_onlin\033[0;32m"
 echo -e "\033[01;34m===================================================================="
 echo -e "\033[1;34m[\033[1;37m12 •\033[1;34m]\033[1;37m > \033[1;33mMENU 2 \033[1;37m( OUTROS RECURSOS. )\033[0;32m"
 echo -e "\033[1;34m[\033[1;37m00 •\033[1;34m]\033[1;37m > \033[1;33mSAIR \033[1;37m( SAIR PARA LINHA DO TERMINAL . )\033[0;32m"
