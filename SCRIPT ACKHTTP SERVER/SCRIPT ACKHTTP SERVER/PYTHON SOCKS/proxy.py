@@ -11,7 +11,7 @@ except:
    LISTENING_PORT = 80
 BUFLEN = 16384 * 8
 TIMEOUT = 30000
-MSG = 'ACKHTTP V.1.0.0'
+MSG = 'ACKHTTP V.1.1.A'
 COR = '<font color="green">'
 FTAG = '</font>'
 DEFAULT_HOST = "127.0.0.1:22"
