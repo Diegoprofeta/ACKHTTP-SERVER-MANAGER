@@ -7,6 +7,11 @@ wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIP
 wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/tweaker; chmod 777 tweaker; ./tweaker
 
 # MEMORIA VIRTUAL
+![IMG![IMG_20211128_162803_468](https://user-imag![IMG_20211128_162803_468](https://user-images.githubusercontent.com/91442628/143782933-4c4fefdb-b8f9-41ac-a37b-4a704a27b506.jpg)
+
+es.githubusercontent.com/91442628/143782933-4c4fefdb-b8f9-41ac-a37b-4a704a27b506.jpg)
+
+_20211128_162803_468](https://user-images.githubusercontent.com/91442628/143782933-4c4fefdb-b8f9-41ac-a37b-4a704a27b506.jpg)
 wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/swapmemory; chmod 777 swapmemory; ./swapmemory
 
 # BAD VPN
