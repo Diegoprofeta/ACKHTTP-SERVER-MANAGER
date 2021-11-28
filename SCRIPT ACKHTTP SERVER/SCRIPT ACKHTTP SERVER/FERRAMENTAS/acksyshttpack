@@ -19,5 +19,3 @@ bash -c 'echo tsc > /sys/devices/system/clocksource/clocksource0/current_clockso
 bash -c 'echo 4400000 > /scaling_max_freq'
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
 echo "obase=16;2^$(nproc)-1" | bc > /sys/class/net/eth0/queues/rx-0/rps_cpus
-/sbin/iptables-restore < /etc/iptables.conf
-

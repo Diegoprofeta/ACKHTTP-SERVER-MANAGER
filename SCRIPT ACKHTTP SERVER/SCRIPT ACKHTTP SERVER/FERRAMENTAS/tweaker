@@ -184,6 +184,7 @@ sysctl -p /etc/sysctl.conf > /dev/null
 echo -n > /etc/sysctl.conf
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/tweaker'  | crontab -u root -
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/acksyshttpack'  | crontab -u root -
+cd /bin/ && rm -f acksyshttpack*
 		echo ""
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !"
 		echo ""
@@ -372,6 +373,8 @@ net.netfilter.nf_conntrack_tcp_timeout_fin_wait = 15
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
+cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/acksyshttpack > /dev/null 2>&1
+cd /bin/ && chmod +x acksyshttpack
 acksyshttpack > /dev/null 2>&1
 sysctl -p /etc/sysctl.conf > /dev/null
 (crontab -l; echo "@reboot sleep 10s && /bin/tweaker") | crontab - > /dev/null 2>&1
