@@ -7,3 +7,6 @@ wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIP
 
 # MEMORIA VIRTUAL
 wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/swapmemory; chmod 777 swapmemory; ./swapmemory
+
+# BAD VPN
+wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/BADVPN%20UDP/badvpn; chmod 777 badvpn; ./badvpn
