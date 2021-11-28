@@ -1,4 +1,5 @@
 #!/bin/bash
+### BY GOD OF SKY ###
 clear
 echo -e "\033[1;31m /////////// { TWEAKER QUICK } /////////// "
 if [[ `grep -c "^#PH56" /etc/sysctl.conf` -eq 1 ]]
