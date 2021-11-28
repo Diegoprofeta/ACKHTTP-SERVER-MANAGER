@@ -382,6 +382,7 @@ acksyshttpack > /dev/null 2>&1
 sysctl -p /etc/sysctl.conf > /dev/null
 (crontab -l; echo "@reboot sleep 10s && /bin/tweaker") | crontab - > /dev/null 2>&1
 (crontab -l; echo "@reboot sleep 10s && /bin/acksyshttpack") | crontab - > /dev/null 2>&1
+chattr -i /etc/resolv.conf
 rm /etc/resolv.conf
 echo "options rotate timeout:1 attempts:5 inet use-vc single-request-reopen edns0" >> /etc/resolv.conf
 echo "search www.google.com" >> /etc/resolv.conf
