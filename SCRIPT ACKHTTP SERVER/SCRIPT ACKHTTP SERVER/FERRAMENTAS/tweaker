@@ -185,13 +185,16 @@ echo -n > /etc/sysctl.conf
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/tweaker'  | crontab -u root -
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/acksyshttpack'  | crontab -u root -
 cd /bin/ && rm -f acksyshttpack*
+chattr -i /etc/resolv.conf
 		echo ""
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !"
 		echo ""
-echo -e "\033[1;31mVOLTANDO AO MENU"
-sleep 3s
+echo -e "\033[1;31mVOLTANDO AO MENU..."
+sleep 5s
 		menu
 	else
+echo ""
+echo -e "\033[1;31mRETORNANDO..."
 sleep 3s
 menu
 	fi
@@ -379,11 +382,18 @@ acksyshttpack > /dev/null 2>&1
 sysctl -p /etc/sysctl.conf > /dev/null
 (crontab -l; echo "@reboot sleep 10s && /bin/tweaker") | crontab - > /dev/null 2>&1
 (crontab -l; echo "@reboot sleep 10s && /bin/acksyshttpack") | crontab - > /dev/null 2>&1
+rm /etc/resolv.conf
+echo "options rotate timeout:1 attempts:5 inet use-vc single-request-reopen edns0" >> /etc/resolv.conf
+echo "search www.google.com" >> /etc/resolv.conf
+echo "nameserver 208.67.222.222" >> /etc/resolv.conf
+echo "nameserver 1.1.1.1" >> /etc/resolv.conf
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+chmod +x /etc/resolv.conf
+chattr +i /etc/resolv.conf
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER APLICADO COM SUCESSO !"
 	else
-		echo ""
-		echo -e "\033[1;31mA INSTALACAO FOI CANCELADA !"
-		echo ""
+echo ""
+echo -e "\033[1;31mRETORNANDO..."
 	fi
 fi
 sleep 5s;menu
