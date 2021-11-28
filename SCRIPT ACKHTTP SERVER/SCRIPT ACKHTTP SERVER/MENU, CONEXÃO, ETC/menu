@@ -220,18 +220,20 @@ echo -e "\033[1;34m[\033[1;37m18 •\033[1;34m]\033[1;37m > \033[1;33mBOT $stsbo
 echo -e "\033[01;34m===================================================================="
 echo -e "\033[1;34m[\033[1;37m19 •\033[1;34m]\033[1;37m > \033[1;33mMODULOS DE CONEXOES \033[1;37m( TUNNEL PARA SOCKS,V2RAY,SSL,SLOWDNS. )\033[0;32m"
 echo -e "\033[1;34m[\033[1;37m20 •\033[1;34m]\033[1;37m > \033[1;33mSPEED-TEST \033[1;37m( TESTAR VELOCIDADE DE LINK. )\033[0;32m"
-echo -e "\033[1;34m[\033[1;37m21 •\033[1;34m]\033[1;37m > \033[1;33mBLOCK-WEB \033[1;37m( BLOQUEAR TRAFEGO WEB. ) \033[0;32m"
-echo -e "\033[1;34m[\033[1;37m22 •\033[1;34m]\033[1;37m > \033[1;33mSLURM \033[1;31m\033[1;37m( MONITORAR LARGURA DE BANDA. )\033[0;32m"
-echo -e "\033[1;34m[\033[1;37m23 •\033[1;34m]\033[1;37m > \033[1;33mHTOP \033[1;37m( ESTATICA DO SISTEMA /CPU/MEM/SWAP/. )\033[0;32m"
-echo -e "\033[1;34m[\033[1;37m24 •\033[1;34m]\033[1;37m > \033[1;33mGLANCES \033[1;31m\033[1;37m( ESTATICA COMPLETA DO SISTEMA. )\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m21 •\033[1;34m]\033[1;37m > \033[1;33mBLOCK WEB \033[1;37m( BLOQUEAR TRAFEGO WEB. ) \033[0;32m"
+echo -e "\033[1;34m[\033[1;37m22 •\033[1;34m]\033[1;37m > \033[1;33mTWEAKER QUICK \033[1;37m( MELHORAR O RENDIMENTO TCP + UDP + MEM + CPU. ) \033[0;32m"
+
+echo -e "\033[1;34m[\033[1;37m23 •\033[1;34m]\033[1;37m > \033[1;33mSLURM \033[1;31m\033[1;37m( MONITORAR LARGURA DE BANDA. )\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m24 •\033[1;34m]\033[1;37m > \033[1;33mHTOP \033[1;37m( ESTATICA DO SISTEMA /CPU/MEM/SWAP/. )\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m25 •\033[1;34m]\033[1;37m > \033[1;33mGLANCES \033[1;31m\033[1;37m( ESTATICA COMPLETA DO SISTEMA. )\033[0;32m"
 echo -e "\033[01;34m===================================================================="
-echo -e "\033[1;34m[\033[1;37m25 •\033[1;34m]\033[1;37m > \033[1;33mMEMORIA VIRTUAL \033[1;37m( CRIAR MEMORIA SWAP NO SERVIDOR. ) \033[1;32mINSTALADO \033[1;37m$swap1\033[0;32m"
-echo -e "\033[1;34m[\033[1;37m26 •\033[1;34m]\033[1;37m > \033[1;33mSENHA ROOT \033[1;37m( ALTERAR SENHA DE ACESSO ROOT. ) \033[0;32m"
-echo -e "\033[1;34m[\033[1;37m27 •\033[1;34m]\033[1;37m > \033[1;33mREINICIAR \033[1;37m( REINICIAR SERVIDOR. ) \033[1;32mSERVIDOR ATIVO \033[1;37m$(uptime | awk -F, '{sub(".*up ",x,$1);print $1}')"
-echo -e "\033[1;34m[\033[1;37m28 •\033[1;34m]\033[1;37m > \033[1;33mDETALHES \033[1;37m( EXIBIR INFORMACOES DO SERVIDOR. )\033[0;32m"
-echo -e "\033[1;34m[\033[1;37m29 •\033[1;34m]\033[1;37m > \033[1;33mEXCLUIR SCRIPT \033[1;37m( REMOVER SCRIPT DO SERVIDOR. )\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m26 •\033[1;34m]\033[1;37m > \033[1;33mMEMORIA VIRTUAL \033[1;37m( CRIAR MEMORIA SWAP NO SERVIDOR. ) \033[1;32mINSTALADO \033[1;37m$swap1\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m27 •\033[1;34m]\033[1;37m > \033[1;33mSENHA ROOT \033[1;37m( ALTERAR SENHA DE ACESSO ROOT. ) \033[0;32m"
+echo -e "\033[1;34m[\033[1;37m28 •\033[1;34m]\033[1;37m > \033[1;33mREINICIAR \033[1;37m( REINICIAR SERVIDOR. ) \033[1;32mSERVIDOR ATIVO \033[1;37m$(uptime | awk -F, '{sub(".*up ",x,$1);print $1}')"
+echo -e "\033[1;34m[\033[1;37m29 •\033[1;34m]\033[1;37m > \033[1;33mDETALHES \033[1;37m( EXIBIR INFORMACOES DO SERVIDOR. )\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m30 •\033[1;34m]\033[1;37m > \033[1;33mEXCLUIR SCRIPT \033[1;37m( REMOVER SCRIPT DO SERVIDOR. )\033[0;32m"
 echo -e "\033[01;34m===================================================================="
-echo -e "\033[1;34m[\033[1;37m30 •\033[1;34m]\033[1;37m > \033[1;33mVOLTAR \033[1;37m( VOLTAR AO MENU PRINCIPAL. )\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m31 •\033[1;34m]\033[1;37m > \033[1;33mVOLTAR \033[1;37m( VOLTAR AO MENU PRINCIPAL. )\033[0;32m"
 echo -e "\033[1;34m[\033[1;37m00 •\033[1;34m]\033[1;37m > \033[1;33mSAIR \033[1;37m( SAIR PARA LINHA DO TERMINAL. )\033[0;32m"
 echo -e "\033[01;34m===================================================================="
 echo -ne "\033[1;37m[ESCOLHA UM NUMERO]\033[1;37m: ----- "; read x
@@ -271,17 +273,13 @@ case "$x" in
    ;;
    22)
    clear
-  echo -e "\033[1;33mPARA SAIR CLICK CTRL + C\033[1;36m"
-   sleep 5s
-   slurm -i eth0
-   clear
-   menu2
+   tweaker
    ;;
    23)
    clear
   echo -e "\033[1;33mPARA SAIR CLICK CTRL + C\033[1;36m"
    sleep 5s
-   htop
+   slurm -i eth0
    clear
    menu2
    ;;
@@ -289,34 +287,42 @@ case "$x" in
    clear
   echo -e "\033[1;33mPARA SAIR CLICK CTRL + C\033[1;36m"
    sleep 5s
-   glances
+   htop
    clear
    menu2
    ;;
    25)
-   swapmemory
+   clear
+  echo -e "\033[1;33mPARA SAIR CLICK CTRL + C\033[1;36m"
+   sleep 5s
+   glances
+   clear
+   menu2
    ;;
    26)
+   swapmemory
+   ;;
+   27)
    clear
    senharoot
    sleep 5s
    ;;
-   27)
+   28)
   clear
   echo -e "\033[1;33mSERVIDOR REINICIANDO...\033[1;36m"
   sleep 5s
   reboot
    ;;
-   28)
+   29)
    clear
    detalhes
-  echo -e "\033[1;33mPARA SAIR CLICK CTRL + C\033[1;36m"
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
-   29)
+   30)
    clear
    delscript
    ;;
-   30)
+   31)
    menu
    ;;
    0|00)
