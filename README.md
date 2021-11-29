@@ -16,7 +16,7 @@ wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIP
 >>> Debian 9 Server x86_64 / Debian 10 Server x86_64
 
 # TWEAKER QUICK
-* Melhore a velocidade de rede do seu servidor com esse script. 
+* Melhore Uplink de rede do seu servidor com esse script. 
 
 ![IMG_20211129_031827_029](https://user-images.githubusercontent.com/91442628/143818217-f103354e-694d-46cb-b008-fea04765d5a6.jpg)
 ==============
