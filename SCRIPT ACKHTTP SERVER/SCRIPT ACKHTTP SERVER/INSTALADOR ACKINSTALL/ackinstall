@@ -411,6 +411,7 @@ cd /bin/ && rm -f banner*
 cd /bin/ && rm -f mudardata*
 cd /bin/ && rm -f delscript*
 cd /bin/ && rm -f senharoot*
+cd /bin/ && rm -f ovpn18*
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/conexao > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/menu > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/sshmonitor > /dev/null 2>&1
@@ -427,6 +428,7 @@ cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGE
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/mudardata > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/delscript > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/senharoot > /dev/null 2>&1
+cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/ovpn18 > /dev/null 2>&1
 cd /bin/ && chmod +x conexao
 cd /bin/ && chmod +x menu
 cd /bin/ && chmod +x sshmonitor
@@ -443,6 +445,7 @@ cd /bin/ && chmod +x banner
 cd /bin/ && chmod +x mudardata
 cd /bin/ && chmod +x delscript
 cd /bin/ && chmod +x senharoot
+cd /bin/ && chmod +x ovpn18
 #######################################
 #### "FIM" ####
 clear
