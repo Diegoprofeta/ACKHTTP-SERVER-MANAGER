@@ -189,9 +189,11 @@ chattr -i /etc/resolv.conf
 sleep 2s
 		echo ""
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !"
+echo ""
+	echo -e "\033[1;33mREINICIE SEU SERVIDOR !"
 		echo ""
-echo -e "\033[1;31mVOLTANDO AO MENU..."
-sleep 5s
+echo -e "\033[1;36mVOLTANDO AO MENU..."
+sleep 6s
 		menu
 	else
 echo ""
