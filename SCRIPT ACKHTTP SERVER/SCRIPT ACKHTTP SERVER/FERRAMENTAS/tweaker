@@ -1,7 +1,7 @@
 #!/bin/bash
 ### BY GOD OF SKY ###
 clear
-echo -e "\033[1;31m /////////// { TWEAKER QUICK } /////////// "
+echo -e "\E[41;1;37m  TWEAKER QUICK    \E[0m"
 if [[ `grep -c "^#PH56" /etc/sysctl.conf` -eq 1 ]]
 then
 echo -e "\033[01;34m===================================================================="
@@ -186,6 +186,7 @@ crontab -u root -l | grep -v '@reboot sleep 10s && /bin/tweaker'  | crontab -u r
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/acksyshttpack'  | crontab -u root -
 cd /bin/ && rm -f acksyshttpack*
 chattr -i /etc/resolv.conf
+sleep 2s
 		echo ""
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !"
 		echo ""
@@ -200,8 +201,17 @@ menu
 	fi
 else
 echo -e "\033[01;34m===================================================================="
-echo -e "\033[1;33mAVISO ! >>>      \033[1;37mESSE SCRIPT LIDAR COM    \033[1;32m(TCP) + \033[1;32m(UDP) + \033[1;32m(MEMORIA)"
-echo -e "\033[01;34m==================================================================== \033[1;37m"
+echo -e "\033[1;33m                ATENÇÃO AOS DETALHES ABAIXO !"
+echo -e "\033[01;34m===================================================================="
+echo -e "\033[1;33mSERA APLICADO AJUSTES NO SERVIDOR, PARA OBTER UMA ALTA PERFORMANCE"
+echo -e "\033[1;33mAUMENTANDO LIMITE DE VALORES PADRÕES DA PILHA KERNEL DO LINUX COMO; 
+\033[1;32m(SYSCTL) \033[1;37m+ \033[1;32m(CWND) \033[1;37m+ \033[1;32m(DNS) \033[1;37m+ \033[1;32m(TCP) \033[1;37m+ \033[1;32m(MTU) \033[1;37m+ \033[1;32m(TX & RX)\033[1;37m"
+echo ""
+echo -e "\033[1;33mO RENDIMENTO PODE SER SUPERIOR OU NÃO."
+echo -e "\033[01;34m===================================================================="
+echo -e "\033[1;33mLEMBRANDO QUE NÃO IRA AUMENTAR SUA INTERNET MILAGROSAMENTE !"
+echo -e "\033[01;34m====================================================================\033[1;37m"
+echo ""
 	read -p "DESEJAR INSTALAR TWEAKER ? [sim/nao]: " -e -i sim resposta
 	if [[ "$resposta" = 'sim' ]]; then
 	echo ""
@@ -376,7 +386,14 @@ net.netfilter.nf_conntrack_tcp_timeout_fin_wait = 15
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
+#
+cd /bin/ && rm -f tweaker*
+cd /bin/ && rm -f acksyshttpack*
+rm -f tweaker*
+rm -f acksyshttpack*
+cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/tweaker > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/acksyshttpack > /dev/null 2>&1
+cd /bin/ && chmod +x tweaker
 cd /bin/ && chmod +x acksyshttpack
 acksyshttpack > /dev/null 2>&1
 sysctl -p /etc/sysctl.conf > /dev/null
@@ -391,6 +408,7 @@ echo "nameserver 1.1.1.1" >> /etc/resolv.conf
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 chmod +x /etc/resolv.conf
 chattr +i /etc/resolv.conf
+sleep 2s
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER APLICADO COM SUCESSO !"
 	else
 echo ""
