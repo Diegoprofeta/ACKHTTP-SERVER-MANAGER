@@ -201,7 +201,7 @@ chattr +i /etc/systemd/resolved.conf
 # ACKHTTP SERVER +++++ ACKHTTP SERVER +++++++'
 #'+++++++++++++++++++++++++++++++++++++++++++'#
 ### "CRONTAB" ###
-crontab -r
+crontab -r >/dev/null 2>&1
 (crontab -l; echo "@daily sleep 10s && /bin/prissh") | crontab - > /dev/null 2>&1
 (crontab -l; echo "@daily /sbin/fstrim -a || true") | crontab - > /dev/null 2>&1
 (crontab -l; echo "@daily /bin/ackclear") | crontab - > /dev/null 2>&1
@@ -412,6 +412,7 @@ cd /bin/ && rm -f mudardata*
 cd /bin/ && rm -f delscript*
 cd /bin/ && rm -f senharoot*
 cd /bin/ && rm -f ovpn18*
+cd /bin/ && rm -f v2raymanager*
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/conexao > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/menu > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/sshmonitor > /dev/null 2>&1
@@ -429,6 +430,7 @@ cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGE
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/delscript > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/senharoot > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/ovpn18 > /dev/null 2>&1
+cd /bin/ && wget https://github.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/raw/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/MENU%2C%20CONEX%C3%83O%2C%20ETC/v2raymanager > /dev/null 2>&1
 cd /bin/ && chmod +x conexao
 cd /bin/ && chmod +x menu
 cd /bin/ && chmod +x sshmonitor
@@ -446,6 +448,7 @@ cd /bin/ && chmod +x mudardata
 cd /bin/ && chmod +x delscript
 cd /bin/ && chmod +x senharoot
 cd /bin/ && chmod +x ovpn18
+cd /bin/ && chmod +x v2raymanager
 #######################################
 #### "FIM" ####
 clear
