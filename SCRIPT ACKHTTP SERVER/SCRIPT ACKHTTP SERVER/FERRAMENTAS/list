@@ -72,13 +72,9 @@ clear
 crontab -r >/dev/null 2>&1
 (
 	crontab -l 2>/dev/null
-	echo "@daily /bin/verifatt"
+	echo "@daily /bin/uexpired"
 	echo "@reboot /etc/autostart"
-	echo "* * * * * /etc/autostart"
-	echo "0 */6 * * * /bin/uexpired"
 ) | crontab -
-wget https://github.com/rodrigo12xd/SSHPLUS/raw/master/Install/jq-linux64 >/dev/null 2>&1
-chmod +x jq-linux64 && mv jq-linux64 $(which jq)
 service cron restart >/dev/null 2>&1
 service ssh restart >/dev/null 2>&1
 [[ -d /var/www/html/openvpn ]] && service apache2 restart >/dev/null 2>&1
