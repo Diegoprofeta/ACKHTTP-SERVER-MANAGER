@@ -95,7 +95,6 @@ echo -e "\033[1;34m[\033[1;37m2 •\033[1;34m] \033[1;37m---  EXCLUIR, DADOS DIS
 echo -e "\033[01;34m===================================================================="
 echo ""
 tput setaf 7 ; tput bold ; read -p "[ESCOLHA UM NUMERO] ----- " -e -i 1 optiondb ; tput sgr0
-echo -ne "\033[1;37m[ESCOLHA UM NUMERO]\033[1;37m: ----- "; read -p optiondb
 } || {
 awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > $HOME/usuarios.db
 }
