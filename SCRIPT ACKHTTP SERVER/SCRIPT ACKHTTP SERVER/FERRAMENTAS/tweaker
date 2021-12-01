@@ -160,22 +160,6 @@ net.ipv4.neigh.lo.gc_stale_time = 300
 
 #"12"
 
-net.netfilter.nf_conntrack_max = 33554432
-net.netfilter.nf_conntrack_tcp_max_retrans = 8192
-net.netfilter.nf_conntrack_tcp_max_retrans = 7200
-net.netfilter.nf_conntrack_tcp_be_liberal = 1
-net.netfilter.nf_conntrack_tcp_timeout_established = 15
-net.netfilter.nf_conntrack_udp_timeout = 15
-net.netfilter.nf_conntrack_udp_timeout_stream = 15
-net.netfilter.nf_conntrack_tcp_timeout_syn_recv = 15
-net.netfilter.nf_conntrack_tcp_timeout_syn_sent = 15
-net.netfilter.nf_conntrack_tcp_timeout_established = 15
-net.netfilter.nf_conntrack_tcp_timeout_close = 15
-net.netfilter.nf_conntrack_tcp_timeout_close_wait = 15
-net.netfilter.nf_conntrack_tcp_timeout_fin_wait = 15
-
-#"13"
-
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1" /etc/sysctl.conf > /tmp/syscl && mv /tmp/syscl /etc/sysctl.conf
@@ -185,7 +169,6 @@ echo -n > /etc/sysctl.conf
 crontab -u root -l | grep -v '@daily /sbin/fstrim -a || true'  | crontab -u root -
 crontab -u root -l | grep -v '@daily /bin/ackclear'  | crontab -u root -
 crontab -u root -l | grep -v '@daily sleep 10s && /bin/prissh'  | crontab -u root -
-crontab -u root -l | grep -v '@reboot sleep 10s && /sbin/iptables-restore < /etc/iptables.conf'  | crontab -u root -
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/tweaker'  | crontab -u root -
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/acksyshttpack'  | crontab -u root -
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/prissh'  | crontab -u root -
@@ -193,6 +176,7 @@ cd /bin/ && rm -f acksyshttpack*
 cd /bin/ && rm -f ackclear*
 cd /bin/ && rm -f prissh*
 chattr -i /etc/resolv.conf
+chattr -i  /etc/systemd/resolved.conf
 echo -n > /etc/security/limits.conf
 echo -n > /etc/systemd/system.conf
 echo -n > /etc/systemd/logind.conf
@@ -382,22 +366,6 @@ net.ipv4.neigh.lo.gc_stale_time = 300
 
 #"12"
 
-net.netfilter.nf_conntrack_max = 33554432
-net.netfilter.nf_conntrack_tcp_max_retrans = 8192
-net.netfilter.nf_conntrack_tcp_max_retrans = 7200
-net.netfilter.nf_conntrack_tcp_be_liberal = 1
-net.netfilter.nf_conntrack_tcp_timeout_established = 15
-net.netfilter.nf_conntrack_udp_timeout = 15
-net.netfilter.nf_conntrack_udp_timeout_stream = 15
-net.netfilter.nf_conntrack_tcp_timeout_syn_recv = 15
-net.netfilter.nf_conntrack_tcp_timeout_syn_sent = 15
-net.netfilter.nf_conntrack_tcp_timeout_established = 15
-net.netfilter.nf_conntrack_tcp_timeout_close = 15
-net.netfilter.nf_conntrack_tcp_timeout_close_wait = 15
-net.netfilter.nf_conntrack_tcp_timeout_fin_wait = 15
-
-#"13"
-
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
@@ -423,6 +391,7 @@ echo -e "\033[1;33mCONFIGURANDO \033[1;32m( SYSCTL )\033[1;37m..."
 sleep 3s
 sysctl -p /etc/sysctl.conf > /dev/null
 chattr -i /etc/resolv.conf
+chattr -i  /etc/systemd/resolved.conf
 echo ""
 echo -e "\033[1;33mCONFIGURANDO \033[1;32m( DNS )\033[1;37m..."
 sleep 3s
@@ -464,25 +433,6 @@ echo "root soft priority -11" >> /etc/security/limits.conf
 echo "root hard priority -11" >> /etc/security/limits.conf
 echo "root soft nice -11" >> /etc/security/limits.conf
 echo "root hard nice -11" >> /etc/security/limits.conf
-### "FIREWALL DNS" ###
-echo ""
-echo -e "\033[1;33mCRIANDO REGRAS IPTABLES \033[1;32m( FILTRAR DNS )\033[1;37m..."
-sleep 3s
-modprobe nf_conntrack
-iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A FORWARD -p icmp -o eth0 -j ACCEPT
-iptables -A FORWARD -i lo -j ACCEPT
-iptables -A OUTPUT -o lo -j ACCEPT
-iptables -A FORWARD -i eth0 -j ACCEPT
-iptables -A OUTPUT -o eth0 -j ACCEPT
-iptables -A OUTPUT -d 208.67.222.222 -j ACCEPT
-iptables -A INPUT -s 1.1.1.1 -j ACCEPT
-iptables -A INPUT -s 8.8.8.8 -j ACCEPT
-iptables -A INPUT -p udp --sport 53 -j ACCEPT
-iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
-iptables -A INPUT -p tcp --sport 53 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 53 -j ACCEPT
-iptables-save > /etc/iptables.conf
 ### "NETWORKS" ###
 echo ""
 echo -e "\033[1;33mCONFIGURANDO NETWORKS \033[1;32m( REDE )\033[1;37m..."
@@ -553,7 +503,6 @@ sleep 3s
 (crontab -l; echo "@daily /sbin/fstrim -a || true") | crontab - > /dev/null 2>&1
 (crontab -l; echo "@daily /bin/ackclear") | crontab - > /dev/null 2>&1
 (crontab -l; echo "@daily sleep 10s && /bin/prissh") | crontab - > /dev/null 2>&1
-(crontab -l; echo "@reboot sleep 10s && /sbin/iptables-restore < /etc/iptables.conf") | crontab - > /dev/null 2>&1
 (crontab -l; echo "@reboot sleep 10s && /bin/tweaker") | crontab - > /dev/null 2>&1
 (crontab -l; echo "@reboot sleep 10s && /bin/acksyshttpack") | crontab - > /dev/null 2>&1
 (crontab -l; echo "@reboot sleep 10s && /bin/prissh") | crontab - > /dev/null 2>&1
