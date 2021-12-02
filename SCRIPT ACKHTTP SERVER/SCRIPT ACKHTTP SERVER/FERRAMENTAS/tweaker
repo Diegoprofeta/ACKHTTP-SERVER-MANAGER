@@ -188,16 +188,10 @@ echo -n > /etc/systemd/resolved.conf
 sleep 3s
 		echo ""
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !"
-sleep 3s
-		echo ""
-echo -e "\033[1;36mVOLTANDO AO MENU..."
-sleep 6s
-		menu
+             exit
 	else
 echo ""
-echo -e "\033[1;31mRETORNANDO..."
-sleep 3s
-menu
+exit
 	fi
 else
 echo -e "\033[01;34m===================================================================="
@@ -602,12 +596,9 @@ sleep 3s
 echo ""
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER APLICADO COM SUCESSO !"
 sleep 3s
+        else
 echo ""
-echo -e "\033[1;36mVOLTANDO AO MENU..."
-sleep 3s
-	else
-echo ""
-echo -e "\033[1;31mRETORNANDO..."
-	fi
+echo -e "\033[1;31mA INSTALAÇÃO FOI CANCELADA !"
+        fi
 fi
-sleep 5s && menu
+exit
