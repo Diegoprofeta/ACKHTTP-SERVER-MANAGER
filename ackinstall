@@ -116,7 +116,7 @@ cd /bin/ && chmod +x tweaker
 # ACKHTTP SERVER +++++ ACKHTTP SERVER +++++++'
 #'+++++++++++++++++++++++++++++++++++++++++++'#
 echo ""
-echo -e "\033[1;33mBAIXANDO PYTHON SOCKS \0E3[1;32m( PROXY.PY + OPEN.PY )"
+echo -e "\033[1;33mBAIXANDO PYTHON SOCKS \033[1;32m( PROXY.PY + OPEN.PY )"
 sleep 3s
 ### "PYTHON SOCKS" ###
 cd /etc/SSHPlus && rm -rf proxy.py*
