@@ -26,10 +26,3 @@ wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIP
 
 >>> Um sistema operacional baseado em Linux 
 (Ubuntu ou Debian)
-
-
-# CANAL TELEGRAM
-
-GOD OF SKY <> https://t.me/GodOfSkyBra
-
->>> CRIADOR <> https://t.me/Godyskyup
