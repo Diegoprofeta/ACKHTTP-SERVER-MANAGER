@@ -273,6 +273,8 @@ case "$x" in
    22)
    clear
    tweaker
+   clear
+   menu
    ;;
    23)
    clear
