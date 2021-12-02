@@ -185,9 +185,9 @@ echo -n > /etc/systemd/logind.conf
 echo -n > /etc/systemd/resolved.conf
 echo -n > /etc/systemd/resolved.conf
 
-sleep 3s
 		echo ""
-	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !"
+	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !\033[1;37m"
+sleep 3s
              exit
 	else
 echo ""
@@ -594,11 +594,12 @@ for i in $(pgrep badvpn); do chrt -p 99 $i; done
 for i in $(pgrep python); do chrt -p 99 $i; done
 sleep 3s
 echo ""
-	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER APLICADO COM SUCESSO !"
+	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER APLICADO COM SUCESSO !\033[1;37m"
 sleep 3s
         else
 echo ""
-echo -e "\033[1;31mA INSTALAÇÃO FOI CANCELADA !"
+echo -e "\033[1;31mA INSTALAÇÃO FOI CANCELADA !\033[1;37m"
+sleep 3s
         fi
 fi
 exit
