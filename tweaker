@@ -189,6 +189,8 @@ echo -n > /etc/systemd/resolved.conf
 
 		echo ""
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !\033[1;37m"
+echo ""
+echo ""
 sleep 3s
              exit
 	else
@@ -197,10 +199,11 @@ exit
 	fi
 else
 echo -e "\033[01;34m===================================================================="
-echo -e "\033[1;33mUTILIZE EM SISTEMA ATUALIZADOS \033[1;32m(UBUNTU OU DEBIAN )"
+echo -e "\033[1;33mREPOSITORIO, OFICIAL NO GITHUB"
+echo -e "\033[1;32mhttps://github.com/ACKHTTP/ACKHTTP-SERVER-MANAGER "
 echo -e "\033[01;34m===================================================================="
 echo ""
-echo -e "\033[1;33mSERA APLICADO AJUSTES NO SERVIDOR, PARA OBTER UMA ALTA PERFORMANCE"
+echo -e "\033[1;33mSERÁ APLICADO AJUSTES NO SERVIDOR, PARA OBTER UMA ALTA PERFORMANCE"
 echo -e "\033[1;33mAUMENTANDO LIMITE DE VALORES PADRÃO DO KERNEL LINUX"
 echo ""
 echo -e "\033[1;33mO RENDIMENTO PODE SER SUPERIOR OU NÃO."
@@ -597,6 +600,8 @@ for i in $(pgrep python); do chrt -p 99 $i; done
 sleep 3s
 echo ""
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER APLICADO COM SUCESSO !\033[1;37m"
+echo ""
+echo ""
 sleep 3s
         else
 echo ""
