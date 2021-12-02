@@ -370,6 +370,15 @@ net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
 #
+apt install speedtest-cli -y > /dev/null 2>&1
+sleep 3s
+echo -e "\033[01;34m====================================================================\033[1;37m"
+echo -e "\033[1;33mTESTANDO LINK DE REDE...\033[1;37m"
+echo ""
+speedtest --simple
+echo ""
+echo -e "\033[01;34m====================================================================\033[1;37m"
+sleep 5s
 cd /bin/ && rm -f tweaker*
 cd /bin/ && rm -f acksyshttpack*
 cd /bin/ && rm -f ackclear*
@@ -561,7 +570,7 @@ echo "ServerAliveInterval 30s" >> /etc/ssh/ssh_config
 echo "TCPKeepAlive yes" >> /etc/ssh/ssh_config
 echo "ipqos af21 cs1" >> /etc/ssh/ssh_config
 service ssh reload /dev/null 2>&1
-sleep 2s
+sleep 3s
 echo ""
 	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER APLICADO COM SUCESSO !"
 sleep 3s
@@ -573,4 +582,4 @@ echo ""
 echo -e "\033[1;31mRETORNANDO..."
 	fi
 fi
-sleep 5s;menu
+sleep 5s && menu
