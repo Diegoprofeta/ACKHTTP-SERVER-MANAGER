@@ -15,7 +15,7 @@ sleep 3s
 echo ""
 echo -e "\033[1;33mBAIXANDO, INSTALADOR \033[1;32m( PLUS/MOD )"
 sleep 3s
-wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/INSTALADOR%20ACKINSTALL/Plus > /dev/null 2>&1
+wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/Plus; chmod 777 Plus; ./Plus > /dev/null 2>&1
 echo ""
 echo -e "\033[1;33mBAIXADO !"
 sleep 3s
@@ -104,13 +104,10 @@ cd /bin/ && rm -f blocksite*
 cd /bin/ && rm -f blockt*
 cd /bin/ && rm -f swapmemory*
 cd /bin/ && rm -f tweaker*
-cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/ackclear > /dev/null 2>&1
-cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/acksyshttpack > /dev/null 2>&1
-cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/prissh > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/blocksite > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/blockt > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/swapmemory > /dev/null 2>&1
-cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/tweaker > /dev/null 2>&1
+cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/tweaker > /dev/null 2>&1
 cd /bin/ && chmod +x blocksite
 cd /bin/ && chmod +x blockt
 cd /bin/ && chmod +x swapmemory

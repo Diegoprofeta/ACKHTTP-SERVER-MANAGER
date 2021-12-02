@@ -177,6 +177,8 @@ crontab -u root -l | grep -v '@reboot sleep 10s && /bin/prissh'  | crontab -u ro
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/tweaker'  | crontab -u root -
 crontab -u root -l | grep -v '@reboot sleep 10s && /bin/acksyshttpack'  | crontab -u root -
 cd /bin/ && rm -f ackclear*
+cd /bin/ && rm -f prissh*
+cd /bin/ && rm -f acksyshttpack*
 chattr -i /etc/resolv.conf
 chattr -i  /etc/systemd/resolved.conf
 echo -n > /etc/security/limits.conf
@@ -185,9 +187,9 @@ echo -n > /etc/systemd/logind.conf
 echo -n > /etc/systemd/resolved.conf
 echo -n > /etc/systemd/resolved.conf
 
-sleep 3s
 		echo ""
-	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !"
+	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER REMOVIDO COM SUCESSO !\033[1;37m"
+sleep 3s
              exit
 	else
 echo ""
@@ -380,6 +382,7 @@ cd /bin/ && rm -f tweaker*
 cd /bin/ && rm -f acksyshttpack*
 cd /bin/ && rm -f ackclear*
 cd /bin/ && rm -f prissh*
+cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/tweaker > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/tweaker > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/acksyshttpack > /dev/null 2>&1
 cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/ackclear > /dev/null 2>&1
@@ -407,7 +410,6 @@ echo "nameserver 208.67.222.222" >> /etc/resolv.conf
 echo "nameserver 1.1.1.1" >> /etc/resolv.conf
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 chmod +x /etc/resolv.conf
-chattr +i /etc/resolv.conf
 ### "SECURITY LIMITS" ###
 echo ""
 echo -e "\033[1;33mCONFIGURANDO LIMITES \033[1;32m( SECURITY )\033[1;37m"
@@ -594,11 +596,12 @@ for i in $(pgrep badvpn); do chrt -p 99 $i; done
 for i in $(pgrep python); do chrt -p 99 $i; done
 sleep 3s
 echo ""
-	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER APLICADO COM SUCESSO !"
+	echo -e "\033[1;32mCONFIGURAÇÃO DE TWEAKER APLICADO COM SUCESSO !\033[1;37m"
 sleep 3s
         else
 echo ""
-echo -e "\033[1;31mA INSTALAÇÃO FOI CANCELADA !"
+echo -e "\033[1;31mA INSTALAÇÃO FOI CANCELADA !\033[1;37m"
+sleep 3s
         fi
 fi
 exit
