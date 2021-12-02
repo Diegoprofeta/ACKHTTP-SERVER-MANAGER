@@ -32,7 +32,7 @@ echo -e "\033[1;33mINICIANDO, INSTALADOR \033[1;32m( ACKINSTALL )"
 sleep 5s
  ### "APT INSTALL"
 echo ""
-echo -e "\033[1;33mBAIXANDO, PACOTES EXTRAS \033[1;32m( HTOP +GLANCES + ETC )"
+echo -e "\033[1;33mBAIXANDO, PACOTES EXTRAS \033[1;32m( HTOP + GLANCES + ETC )"
 sleep 3s
 apt install htop -y > /dev/null 2>&1
 apt install iptables -y > /dev/null 2>&1
