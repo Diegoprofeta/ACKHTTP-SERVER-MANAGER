@@ -4,8 +4,7 @@
 
 ![IMG_20211128_161813_289](https://user-images.githubusercontent.com/91442628/143782747-3bf052f6-b8a1-4714-b997-e5966ec472fd.jpg)
 ==============
-wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/INSTALADOR%20ACKINSTALL/ackinstall; chmod 777 ackinstall; ./ackinstall
-
+wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/ackinstall; chmod 777 ackinstall; ./ackinstall
 🏴‍☠️ REQUESITOS PARA INSTALAR () 
 
 >>> Um sistema operacional baseado em Linux 
