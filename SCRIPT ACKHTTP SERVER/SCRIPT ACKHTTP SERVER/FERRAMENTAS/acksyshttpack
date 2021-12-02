@@ -20,3 +20,4 @@ bash -c 'echo 4400000 > /scaling_max_freq'
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
 echo "obase=16;2^$(nproc)-1" | bc > /sys/class/net/eth0/queues/rx-0/rps_cpus
 echo 16384 > /sys/module/nf_conntrack/parameters/hashsize
+echo 16384 > /sys/class/net/eth0/queues/rx-0/rps_flow_cnt
