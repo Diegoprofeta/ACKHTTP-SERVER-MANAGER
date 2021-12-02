@@ -58,6 +58,8 @@ echo -e "\033[1;33mCASO, QUEIRA ATUALIZAR O SEU SCRIPT ATUAL \033[1;32m(SSHPLUS)
 echo -e "\033[1;33mINSTALANDO POR CIMA, NÃO TEM PROBLEMA, EM ATUALIZAR"
 echo -e "\033[1;33mTODOS OS RECURSOS, SERÃO BAIXADOS NORMALMENTE."
 echo ""
+echo -e "\033[1;33mO SCRIPT NÃO FUNCIONARÁ EM VIRTUALIZAÇÃO ( KVM ) !"
+echo ""
 echo -e "\033[01;34m===================================================================="
 echo ""
 #-----------------------------------------------------------------------------------------------------------------
