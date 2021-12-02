@@ -175,6 +175,9 @@ crontab -u root -l | grep -v '@reboot sleep 10s && /bin/prissh'  | crontab -u ro
 cd /bin/ && rm -f acksyshttpack*
 cd /bin/ && rm -f ackclear*
 cd /bin/ && rm -f prissh*
+cd /bin/ && rm -f tweaker*
+cd /bin/ && wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/FERRAMENTAS/tweaker > /dev/null 2>&1
+cd /bin/ && chmod +x tweaker
 chattr -i /etc/resolv.conf
 chattr -i  /etc/systemd/resolved.conf
 echo -n > /etc/security/limits.conf
