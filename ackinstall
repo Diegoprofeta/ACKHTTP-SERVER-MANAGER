@@ -96,6 +96,67 @@ echo "export TMOUT=0" >> /etc/profile
 #'+++++++++++++++++++++++++++++++++++++++++++'
 # ACKHTTP SERVER +++++ ACKHTTP SERVER +++++++'
 #'+++++++++++++++++++++++++++++++++++++++++++'#
+### "SSHD" ###
+echo ""
+echo -e "\033[1;33mCONFIGURANDO \033[1;32m( SSHD )\033[1;37m"
+sleep 3s
+echo -n > /etc/ssh/sshd_config
+echo "X11Forwarding yes" >> /etc/ssh/sshd_confi
+echo "PrintMotd no" >> /etc/ssh/sshd_config
+echo "AcceptEnv LANG LC_*" >> /etc/ssh/sshd_config
+echo "Subsystem       sftp    /usr/lib/openssh/sftp-server" >> /etc/ssh/sshd_config
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+echo "Compression yes" >> /etc/ssh/sshd_config
+echo "UseDNS yes" >> /etc/ssh/sshd_config
+echo "UsePAM yes" >> /etc/ssh/sshd_config
+echo "Authenticationmethods password" >> /etc/ssh/sshd_config
+echo "Kexalgorithms diffie-hellman-group14-sha1" >> /etc/ssh/sshd_config
+echo "Ciphers aes128-ctr" >> /etc/ssh/sshd_config
+echo "MACs hmac-sha1" >> /etc/ssh/sshd_config
+echo "Fingerprinthash MD5" >> /etc/ssh/sshd_config
+echo "ClientAliveCountMax 15" >> /etc/ssh/sshd_config
+echo "ClientAliveInterval 30s" >> /etc/ssh/sshd_config
+echo "MaxStartups 20000" >> /etc/ssh/sshd_config
+echo "MaxSessions 20000" >> /etc/ssh/sshd_config
+echo "MaxAuthTries 20000" >> /etc/ssh/sshd_config
+echo "LoginGraceTime 0s" >> /etc/ssh/sshd_config
+echo "TCPKeepAlive yes" >> /etc/ssh/sshd_config
+echo "Port 22" >> /etc/ssh/sshd_config
+echo "ipqos af21 cs1" >> /etc/ssh/sshd_config
+service sshd reload /dev/null 2>&1
+#'+++++++++++++++++++++++++++++++++++++++++++'
+# ACKHTTP SERVER +++++ ACKHTTP SERVER +++++++'
+#'+++++++++++++++++++++++++++++++++++++++++++'#
+### "SSH" ###
+echo ""
+echo -e "\033[1;33mCONFIGURANDO \033[1;32m( SSH )\033[1;37m"
+echo -n > /etc/ssh/ssh_config
+echo "Host *" >> /etc/ssh/ssh_config
+echo "ControlMaster auto" >> /etc/ssh/ssh_config
+echo "ControlPath ~/.ssh/%r@%h:%p" >> /etc/ssh/ssh_config
+echo "ControlPersist 86400s" >> /etc/ssh/ssh_config
+echo "ConnectTimeout 86400s" >> /etc/ssh/ssh_config
+echo "Compression yes" >> /etc/ssh/ssh_config
+echo "ConnectionAttempts 86400s" >> /etc/ssh/ssh_config
+echo "Port 22" >> /etc/ssh/ssh_config
+echo "ChallengeResponseAuthentication yes" >> /etc/ssh/ssh_config
+echo "ClearAllForwardings yes" >> /etc/ssh/ssh_config
+echo "ExitOnForwardFailure yes" >> /etc/ssh/ssh_config
+echo "Pubkeyauthentication no" >> /etc/ssh/ssh_config
+echo "PreferredAuthentications=password" >> /etc/ssh/ssh_config
+echo "Kexalgorithms diffie-hellman-group14-sha1" >> /etc/ssh/ssh_config
+echo "Ciphers aes128-ctr" >> /etc/ssh/ssh_config
+echo "MACs hmac-sha1" >> /etc/ssh/ssh_config
+echo "Fingerprinthash MD5" >> /etc/ssh/ssh_config
+echo "ServerAliveCountMax 15" >> /etc/ssh/ssh_config
+echo "ServerAliveInterval 30s" >> /etc/ssh/ssh_config
+echo "TCPKeepAlive yes" >> /etc/ssh/ssh_config
+echo "ipqos af21 cs1" >> /etc/ssh/ssh_config
+service ssh reload /dev/null 2>&1
+sleep 3s
+#'+++++++++++++++++++++++++++++++++++++++++++'
+# ACKHTTP SERVER +++++ ACKHTTP SERVER +++++++'
+#'+++++++++++++++++++++++++++++++++++++++++++'#
 ### "FERRAMENTAS" ###
 echo ""
 echo -e "\033[1;33mBAIXANDO FERRAMENTAS \033[1;32m (BLOCKSITE + SWAP MEMORY ETC "
