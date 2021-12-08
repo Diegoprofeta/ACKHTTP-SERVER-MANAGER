@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-#rm -f multiportas
+rm -f multiportas*
 apt install python3.7 -y > /dev/null 2>&1
 echo -e "\033[1;33m REINICIE O SERVIDOR, APOS O PROCEDIMENTO !\033[1;32m"
 echo ""
