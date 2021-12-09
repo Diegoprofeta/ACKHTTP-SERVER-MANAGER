@@ -23,6 +23,7 @@ echo ""
 echo -e "\033[1;33mINICIANDO, INSTALADOR \033[1;32m( PLUS/MOD )"
 sleep 5s
 chmod +x Plus; ./Plus
+cd /bin/ && rm -f menu*
 clear
 #'+++++++++++++++++++++++++++++++++++++++++++'#
 # ACKHTTP SERVER +++++ ACKHTTP SERVER +++++++'
