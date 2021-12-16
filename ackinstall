@@ -160,7 +160,7 @@ sleep 3s
 #'+++++++++++++++++++++++++++++++++++++++++++'#
 ### "FERRAMENTAS" ###
 echo ""
-echo -e "\033[1;33mBAIXANDO FERRAMENTAS \033[1;32m (BLOCKSITE + SWAP MEMORY ETC "
+echo -e "\033[1;33mBAIXANDO FERRAMENTAS \033[1;32m ( TWEAKER + SWAP MEMORY ETC ) "
 sleep 3s
 cd /bin/ && rm -f blocksite*
 cd /bin/ && rm -f blockt*
