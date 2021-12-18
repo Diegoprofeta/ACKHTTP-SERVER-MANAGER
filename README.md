@@ -21,6 +21,7 @@ wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/ackin
 ![IMG_20211129_031827_029](https://user-images.githubusercontent.com/91442628/143818217-f103354e-694d-46cb-b008-fea04765d5a6.jpg)
 ==============
 wget https://raw.githubusercontent.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/main/tweaker; chmod 777 ./tweaker; ./tweaker
+
 🏴‍☠️ REQUESITOS PARA INSTALAR () 
 
 >>> Um sistema operacional baseado em Linux 
